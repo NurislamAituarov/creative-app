@@ -24,11 +24,36 @@ html {
   src: url(./assets/fonts/raleway-black.woff2);
   font-weight: 900;
 }
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: auto;
+  background-color: black;
+}
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #bebebc;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #e7e7e0;
+  cursor: pointer;
+}
+
 body {
   background-color: #010101;
   font-family: raleway_f, sans-serif;
   line-height: 1.55;
   color: var(--text);
+}
+
+.wrapper {
+  cursor: pointer;
+}
+.content {
+  will-change: transform;
 }
 
 .header {
@@ -62,6 +87,7 @@ body {
   position: absolute;
   will-change: transform;
   z-index: 2;
+  // transition: var(--transition);
 }
 
 .layers__base {
@@ -94,6 +120,7 @@ body {
   font-weight: 900;
   color: var(--text);
   text-shadow: 0 0 15px #ecebda;
+  // transition: var(--transition);
 }
 .layers__title {
   font-size: 0.8rem;
@@ -124,6 +151,7 @@ body {
   letter-spacing: calc(var(--index) / 7);
   transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
   will-change: transform;
+  transition: var(--transition);
 }
 .main__article-subtitle {
   max-width: calc(var(--index) * 30);
@@ -131,6 +159,7 @@ body {
   margin-top: calc(var(--index) / 1.25);
   transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
   will-change: transform;
+  transition: var(--transition);
 }
 .copy {
   position: absolute;
