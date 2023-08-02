@@ -1,0 +1,141 @@
+@import-normalize;
+
+html {
+  font-size: 16px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --text: #e7e7e0;
+  --transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+@font-face {
+  font-family: raleway_f;
+  src: url(./assets/fonts/raleway-regular.woff2);
+}
+@font-face {
+  font-family: raleway_f;
+  src: url(./assets/fonts/raleway-black.woff2);
+  font-weight: 900;
+}
+body {
+  background-color: #010101;
+  font-family: raleway_f, sans-serif;
+  line-height: 1.55;
+  color: var(--text);
+}
+
+.header {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: calc(var(--index) * 10);
+    background-image: url(./assets//img/ground.png);
+    background-size: cover;
+    background-position: center;
+    bottom: calc(var(--index) * -5);
+  }
+}
+
+.layers {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  will-change: transform;
+  z-index: 2;
+}
+
+.layers__base {
+  background: url(./assets/img/layer-base.png);
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, calc(var(--scrollTop) / 1.6), 0);
+  z-index: 0;
+}
+
+.layers__middle {
+  background: url(./assets/img/layer-middle.png);
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, calc(var(--scrollTop) / 2.5), 0);
+}
+
+.layers__front {
+  background: url(./assets/img/layer-front.png);
+  background-size: cover;
+  background-position: center;
+  transform: translate3d(0, calc(var(--scrollTop) / 5.5), 0);
+}
+
+.layers__header {
+  z-index: 1;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--text);
+  text-shadow: 0 0 15px #ecebda;
+}
+.layers__title {
+  font-size: 0.8rem;
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.5);
+}
+.layers__subtitle {
+  font-size: calc(var(--index) * 2);
+  letter-spacing: calc(var(--index) / 2.2);
+}
+//
+.main__article {
+  background: url(./assets/img/dungeon.jpg);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.main__article-title {
+  text-transform: uppercase;
+  font-size: calc(var(--index) * 1.7);
+  letter-spacing: calc(var(--index) / 7);
+  transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  will-change: transform;
+}
+.main__article-subtitle {
+  max-width: calc(var(--index) * 30);
+  font-size: calc(var(--index) * 0.8);
+  margin-top: calc(var(--index) / 1.25);
+  transform: translate3d(0, calc(var(--scrollTop) / -7.5), 0);
+  will-change: transform;
+}
+.copy {
+  position: absolute;
+  bottom: calc(var(--index) * 2);
+  opacity: 0.5;
+  font-size: calc(var(--index) * 0.75);
+  letter-spacing: calc(var(--index) / 35);
+}
