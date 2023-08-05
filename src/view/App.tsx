@@ -4,24 +4,79 @@ import LocomotiveScroll from 'locomotive-scroll';
 import { FairFores } from '../pages/FairForest';
 import { CreateScroll } from '../pages/CreativeScroll';
 import { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
 
 function App() {
   const history = useLocation();
-  const wrapperRef = useRef(null);
+  const containerRef = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     if (history.pathname === '/') {
-      wrapperRef.current &&
+      containerRef.current &&
         new LocomotiveScroll({
-          el: wrapperRef.current,
+          el: containerRef.current,
           smooth: true,
-          getSpeed: true,
+        });
+
+      gsap.fromTo(
+        '.hero__section',
+        { opacity: 1 },
+        {
+          opacity: 0,
+          scrollTrigger: {
+            trigger: '.hero__section',
+            start: 'top',
+            end: 700,
+            scrub: true,
+          },
+        },
+      );
+
+      const itemsL = gsap.utils.toArray('.gallery__left .gallery__item');
+      const itemsR = gsap.utils.toArray('.gallery__right .gallery__item');
+
+      itemsL &&
+        itemsL.forEach((el: any) => {
+          gsap.fromTo(
+            el,
+            { opacity: 0, x: -300 },
+            {
+              opacity: 1,
+              x: 0,
+              scrollTrigger: {
+                trigger: el,
+                start: '-100',
+                end: '700',
+                scrub: true,
+              },
+            },
+          );
+        });
+
+      itemsR &&
+        itemsR.forEach((el: any) => {
+          gsap.fromTo(
+            el,
+            { opacity: 0, x: 300 },
+            {
+              opacity: 1,
+              x: 0,
+              scrollTrigger: {
+                trigger: el,
+                start: '200',
+                end: '800',
+                scrub: true,
+              },
+            },
+          );
         });
     }
   }, []);
 
   return (
-    <div className="wrapper" data-scroll-container ref={wrapperRef}>
+    <div className="wrapper" data-scroll-container ref={containerRef}>
       <Routes>
         <Route path="/fair-forest" element={<FairFores />} />
         <Route path="/" element={<CreateScroll />} />
