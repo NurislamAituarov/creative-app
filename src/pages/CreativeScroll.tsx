@@ -19,24 +19,24 @@ export function CreateScroll() {
   }
 
   return (
-    <>
-      <header className="hero__section" data-scroll-section>
-        <img className="hero" src={hero} alt="hero" data-scroll data-scroll-speed="-1" />
+    <div data-scroll-section>
+      <header className="hero__section">
+        <img className="hero" src={hero} alt="hero" data-scroll data-scroll-speed="2" />
 
         <div className="container">
-          <div className="hero__header" data-scroll data-scroll-speed="5">
+          <div className="hero__header" data-scroll data-scroll-speed="12">
             <h1 className="hero__title">creative scroll</h1>
           </div>
         </div>
       </header>
 
-      <main id="content" className="portfolio">
+      <main className="portfolio">
         <div className="container">
-          <div className="gallery" data-scroll-section>
-            <div className="gallery__left" data-scroll data-scroll-speed="10">
+          <div className="gallery">
+            <div className="gallery__left">
               <img className="gallery__item" src={gallery_img1} alt="картинка галереи" />
               <img className="gallery__item" src={gallery_img2} alt="картинка галереи" />
-              <div className="gallery__text gallery__item">
+              <div className="gallery__item gallery__text ">
                 <h2>Creating floating scroll with amazing parallax effect</h2>
                 <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ipsum eaque
@@ -45,7 +45,7 @@ export function CreateScroll() {
               </div>
               <img className="gallery__item" src={gallery_img5} alt="картинка галереи" />
             </div>
-            <div className="gallery__right" data-scroll data-scroll-speed="0">
+            <div className="gallery__right" data-scroll data-scroll-speed="3">
               <div className="gallery__text gallery__item">
                 <h2>Creating floating scroll with amazing parallax effect</h2>
                 <p>
@@ -60,6 +60,6 @@ export function CreateScroll() {
           </div>
         </div>
       </main>
-    </>
+    </div>
   );
 }

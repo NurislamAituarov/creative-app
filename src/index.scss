@@ -73,6 +73,15 @@ body {
 
 //Creative Scroll
 
+.hero,
+.hero__section,
+.gallery,
+.hero__header,
+.gallery__left,
+.gallery__right {
+  will-change: transform;
+}
+
 .hero__section {
   height: 100vh;
 }
@@ -105,20 +114,20 @@ body {
 .gallery {
   display: flex;
   padding: calc(var(--index) * 8) 0;
+  padding-top: calc(var(--index) * 10);
   & > * {
     flex: 1;
-    height: 30vh;
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: calc(var(--index) * 10);
+    row-gap: calc(var(--index) * 10);
   }
 
   &__left {
-    margin-top: calc(var(--index) * 17);
+    // margin-top: calc(var(--index) * 17);
   }
   &__right {
-    margin-top: calc(var(--index) * 10);
+    // margin-top: calc(var(--index) * 17);
   }
 }
 
