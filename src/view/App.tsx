@@ -34,11 +34,11 @@ function App() {
         },
       );
 
-      const items_left = gsap.utils.toArray('.gallery__left .gallery__item');
-      const items_right = gsap.utils.toArray('.gallery__right .gallery__item');
+      const itemsL = gsap.utils.toArray('.gallery__left .gallery__item');
+      const itemsR = gsap.utils.toArray('.gallery__right .gallery__item');
 
-      items_left &&
-        items_left.forEach((el: any) => {
+      itemsL &&
+        itemsL.forEach((el: any) => {
           gsap.fromTo(
             el,
             { opacity: 0, x: -300 },
@@ -55,8 +55,8 @@ function App() {
           );
         });
 
-      items_right &&
-        items_right.forEach((el: any) => {
+      itemsR &&
+        itemsR.forEach((el: any) => {
           gsap.fromTo(
             el,
             { opacity: 0, x: 300 },
