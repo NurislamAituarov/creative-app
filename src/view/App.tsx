@@ -6,6 +6,7 @@ import { CreateScroll } from '../pages/CreativeScroll';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/all';
+import { TheNav } from '../components/TheNav';
 
 function App() {
   const history = useLocation();
@@ -33,50 +34,12 @@ function App() {
           },
         },
       );
-
-      const itemsL = gsap.utils.toArray('.gallery__left .gallery__item');
-      const itemsR = gsap.utils.toArray('.gallery__right .gallery__item');
-
-      itemsL &&
-        itemsL.forEach((el: any) => {
-          gsap.fromTo(
-            el,
-            { opacity: 0, x: -300 },
-            {
-              opacity: 1,
-              x: 0,
-              scrollTrigger: {
-                trigger: el,
-                start: '-100',
-                end: '700',
-                scrub: true,
-              },
-            },
-          );
-        });
-
-      itemsR &&
-        itemsR.forEach((el: any) => {
-          gsap.fromTo(
-            el,
-            { opacity: 0, x: 300 },
-            {
-              opacity: 1,
-              x: 0,
-              scrollTrigger: {
-                trigger: el,
-                start: '200',
-                end: '800',
-                scrub: true,
-              },
-            },
-          );
-        });
     }
-  }, []);
+  }, [history.pathname]);
 
   return (
     <div className="wrapper" data-scroll-container ref={containerRef}>
+      <TheNav />
       <Routes>
         <Route path="/fair-forest" element={<FairFores />} />
         <Route path="/" element={<CreateScroll />} />

@@ -27,6 +27,11 @@ html {
   font-weight: 900;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* полоса прокрутки (скроллбар) */
 ::-webkit-scrollbar {
   width: 12px;
@@ -49,6 +54,11 @@ body {
   font-family: raleway_f, sans-serif;
   line-height: 1.55;
   color: var(--text);
+}
+
+.wrapper {
+  position: relative;
+  overflow-x: hidden;
 }
 
 .content {
@@ -77,6 +87,7 @@ body {
 .hero__section,
 .gallery,
 .hero__header,
+.gallery__item,
 .gallery__left,
 .gallery__right {
   will-change: transform;
@@ -88,64 +99,4 @@ body {
 
 .container {
   padding: 0 7vw;
-}
-
-.hero {
-  position: absolute;
-  left: 35vw;
-  top: 10vh;
-  width: calc(var(--index) * 36);
-  z-index: -1;
-}
-
-.hero__header {
-  position: relative;
-  height: 100vh;
-}
-
-.hero__title {
-  width: min-content;
-  position: absolute;
-  font-size: calc(var(--index) * 6);
-  line-height: calc(var(--index) * 6);
-  bottom: 10vh;
-}
-
-.gallery {
-  display: flex;
-  padding: calc(var(--index) * 8) 0;
-  padding-top: calc(var(--index) * 10);
-  & > * {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    row-gap: calc(var(--index) * 10);
-  }
-
-  &__left {
-    // margin-top: calc(var(--index) * 17);
-  }
-  &__right {
-    // margin-top: calc(var(--index) * 17);
-  }
-}
-
-.gallery__item {
-  max-width: calc(var(--index) * 20);
-  max-height: 180vh;
-  border-radius: 8px;
-}
-
-.gallery__text {
-  position: relative;
-  font-size: 1.5rem;
-  line-height: 2.5rem;
-  h2 {
-    color: var(--light-text);
-    margin-bottom: 1.5rem;
-  }
-  p {
-    line-height: 2rem;
-  }
 }

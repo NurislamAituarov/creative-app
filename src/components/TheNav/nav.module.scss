@@ -1,0 +1,14 @@
+.nav {
+  position: absolute;
+  max-width: 100%;
+  top: 20px;
+  right: 150px;
+  color: var(--light-text);
+  font-size: calc(var(--index));
+  font-weight: bold;
+  z-index: 100;
+  a:hover {
+    text-shadow: 0 0 15px #ecebda;
+    transition: all 0.5s;
+  }
+}
