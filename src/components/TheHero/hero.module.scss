@@ -1,0 +1,20 @@
+.hero {
+  position: absolute;
+  left: 35vw;
+  top: 1vh;
+  width: calc(var(--index) * 36);
+  z-index: -1;
+}
+
+.hero__header {
+  position: relative;
+  height: 100vh;
+}
+
+.hero__title {
+  width: min-content;
+  position: absolute;
+  font-size: calc(var(--index) * 6);
+  line-height: calc(var(--index) * 6);
+  bottom: 10vh;
+}
