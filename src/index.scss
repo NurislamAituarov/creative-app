@@ -16,6 +16,7 @@ html {
   --light-text: #f3f3e9;
   --transition: transform 0.75s cubic-bezier(0.075, 0.5, 0, 1);
   --gallery-gap: calc(var(--index) * 7.5);
+  --transition-carousel: 0.75s cubic-bezier(0.5, 0.6, 0, 1);
 }
 @font-face {
   font-family: raleway_f;
@@ -59,9 +60,11 @@ body {
 .wrapper {
   position: relative;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .content {
+  min-height: 100vh;
   will-change: transform;
   cursor: pointer;
 }
@@ -98,5 +101,42 @@ body {
 }
 
 .container {
+  min-height: 100vh;
   padding: 0 7vw;
+}
+
+// Swiper
+
+.swiper {
+}
+.slider__wrapper {
+  width: max-content;
+  display: flex;
+  transition: var(--transition-carousel) !important;
+  will-change: transform;
+}
+
+.slider {
+  height: 100%;
+  transform: rotate(15deg);
+  overflow: visible;
+  margin-top: 10vh;
+}
+
+.slider__item {
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.slider__img {
+  position: absolute;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: var(--transition-carousel) !important;
+  will-change: transform;
+  cursor: pointer;
 }

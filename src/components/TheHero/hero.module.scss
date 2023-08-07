@@ -17,4 +17,5 @@
   font-size: calc(var(--index) * 6);
   line-height: calc(var(--index) * 6);
   bottom: 10vh;
+  // transform: translate3d(0, calc(var(--scrollTop) / -4), 0);
 }

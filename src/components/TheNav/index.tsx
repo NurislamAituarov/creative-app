@@ -7,11 +7,11 @@ export function TheNav() {
   return (
     <nav className={cn.nav}>
       <ul>
-        {history.pathname === '/' ? (
-          <NavLink to={'/fair-forest'}>Fair Forest</NavLink>
-        ) : (
-          <NavLink to={'/'}>Creative Scroll</NavLink>
+        {history.pathname !== '/creative-scroll' && (
+          <NavLink to={'/creative-scroll'}>Creative Scroll</NavLink>
         )}
+        {history.pathname !== '/fair-forest' && <NavLink to={'/fair-forest'}>Fair Forest</NavLink>}
+        {history.pathname !== '/' && <NavLink to={'/'}>Carousel</NavLink>}
       </ul>
     </nav>
   );
