@@ -7,6 +7,10 @@
   font-size: calc(var(--index));
   font-weight: bold;
   z-index: 100;
+  ul {
+    display: flex;
+    gap: 20px;
+  }
   a:hover {
     text-shadow: 0 0 15px #ecebda;
     transition: all 0.5s;

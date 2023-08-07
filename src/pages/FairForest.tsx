@@ -8,18 +8,18 @@ export function FairFores() {
   const [play] = useSound(sound, { volume: 0.25 });
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
-      writeVaraibleScroll();
-    });
+    const handleScroll = () => {
+      writeVariableScroll();
+    };
+
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener('scroll', () => {
-        writeVaraibleScroll();
-      });
+      window.removeEventListener('scroll', () => handleScroll);
     };
   }, []);
 
-  function writeVaraibleScroll() {
+  function writeVariableScroll() {
     document.body.style.cssText += `--scrollTop:${window.scrollY}px`;
   }
 
