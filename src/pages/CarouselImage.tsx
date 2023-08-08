@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Swiper from 'swiper';
 
 import img1 from '../assets/images/1.jpg';
@@ -11,7 +11,7 @@ import img7 from '../assets/images/7.jpg';
 
 export function CarouselImage() {
   useEffect(() => {
-    const swiper = new Swiper('.swiper', {
+    const sliderMain = new Swiper('.swiper', {
       freeMode: true,
       centeredSlides: true,
       mousewheel: true,
@@ -27,54 +27,113 @@ export function CarouselImage() {
         },
       },
     });
+
+    const sliderBg = new Swiper('.slider__bg', {
+      centeredSlides: true,
+      mousewheel: true,
+      parallax: true,
+      slidesPerView: 3.5,
+      spaceBetween: 60,
+    });
+
+    // sliderMain.controller.control = sliderBg;
   }, []);
 
   return (
-    <div className="swiper slider slider__main">
-      <div className="swiper-wrapper slider__wrapper">
-        <div className="swiper-slide slider__item">
-          <div
-            className="slider__img"
-            data-swiper-parallax="20%"
-            style={{ backgroundImage: `url(${img1})` }}></div>
-        </div>
-        <div className="swiper-slide slider__item">
-          <div
-            className="slider__img"
-            data-swiper-parallax="40%"
-            style={{ backgroundImage: `url(${img2})` }}></div>
-        </div>
-        <div className="swiper-slide slider__item">
-          <div
-            className="slider__img"
-            data-swiper-parallax="20%"
-            style={{ backgroundImage: `url(${img3})` }}></div>
-        </div>
-        <div className="swiper-slide slider__item">
-          <div
-            className="slider__img"
-            data-swiper-parallax="40%"
-            style={{ backgroundImage: `url(${img4})` }}></div>
-        </div>
-        <div className="swiper-slide slider__item">
-          <div
-            className="slider__img"
-            data-swiper-parallax="20%"
-            style={{ backgroundImage: `url(${img5})` }}></div>
-        </div>
-        <div className="swiper-slide slider__item">
-          <div
-            className="slider__img"
-            data-swiper-parallax="40%"
-            style={{ backgroundImage: `url(${img6})` }}></div>
-        </div>
-        <div className="swiper-slide slider__item">
-          <div
-            className="slider__img"
-            data-swiper-parallax="20%"
-            style={{ backgroundImage: `url(${img7})` }}></div>
+    <>
+      <div className="swiper slider slider__main">
+        <div className="swiper-wrapper slider__wrapper">
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img1})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="40%"
+              style={{ backgroundImage: `url(${img2})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img3})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="40%"
+              style={{ backgroundImage: `url(${img4})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img5})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="40%"
+              style={{ backgroundImage: `url(${img6})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img7})` }}></div>
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className="swiper slider slider__bg">
+        <div className="swiper-wrapper slider__wrapper">
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img1})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="40%"
+              style={{ backgroundImage: `url(${img2})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img3})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="40%"
+              style={{ backgroundImage: `url(${img4})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img5})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="40%"
+              style={{ backgroundImage: `url(${img6})` }}></div>
+          </div>
+          <div className="swiper-slide slider__item">
+            <div
+              className="slider__img"
+              data-swiper-parallax="20%"
+              style={{ backgroundImage: `url(${img7})` }}></div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
