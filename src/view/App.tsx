@@ -15,21 +15,27 @@ function App() {
   gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
-    if (history.pathname === '/creative-scroll') {
+    if (history.pathname === '/' && containerRef.current) {
+      containerRef.current.style.overflow = 'hidden';
+      containerRef.current.style.height = '100vh';
+    }
+
+    if (history.pathname === '/creative-scroll' && containerRef.current) {
+      containerRef.current.style.overflow = '';
+      containerRef.current.style.overflowX = 'hidden';
+      containerRef.current.style.height = 'auto';
+
       containerRef.current &&
         new LocomotiveScroll({
           el: containerRef.current,
           smooth: true,
         });
     }
-    if (history.pathname === '/') {
-      if (containerRef.current) containerRef.current.style.overflow = 'hidden';
-    }
-    if (history.pathname === '/fair-forest') {
-      if (containerRef.current) {
-        if (containerRef.current) containerRef.current.style.overflow = '';
-        containerRef.current.style.overflowX = 'hidden';
-      }
+
+    if (history.pathname === '/fair-forest' && containerRef.current) {
+      containerRef.current.style.overflow = '';
+      containerRef.current.style.overflowX = 'hidden';
+      containerRef.current.style.height = 'auto';
     }
   }, [history.pathname]);
 

@@ -140,3 +140,18 @@ body {
   will-change: transform;
   cursor: pointer;
 }
+
+.slider__bg {
+  position: relative;
+  z-index: -1;
+  top: -110vh;
+  left: -2vw;
+  transform: rotate(-15deg);
+  opacity: 0.2;
+  margin: 0;
+  filter: saturate(20) blur(120px);
+
+  .slider__item {
+    height: 100vh;
+  }
+}
